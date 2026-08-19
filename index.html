@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>St. Clement of Alexandria Orthodox Church & Mission – Riruta</title>
+  <title>St. Clement of Alexandria Orthodox Church &amp; Mission – Riruta</title>
   <meta name="description" content="St. Clement of Alexandria Orthodox Church & Mission — preserving Holy Tradition and serving our community in Dagoretti, Nairobi." />
   <meta name="theme-color" content="#3a120d" />
 
@@ -15,17 +15,876 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- ===== All CSS merged ===== -->
+  <style>
+    /* ---------- Original style.css ---------- */
+    :root {
+      --mahogany: #5e1f17;
+      --mahogany-deep: #3a120d;
+      --mahogany-darkest: #210a07;
+      --gold: #c9a14a;
+      --gold-soft: #e0c280;
+      --cream: #f6efe1;
+      --cream-dim: #e7dcc6;
+      --ink: #1b0f0c;
+      --shadow: rgba(33, 10, 7, 0.45);
+      --font-display: "Marcellus", serif;
+      --font-body: "EB Garamond", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background-color: var(--cream);
+      font-size: 1.075rem;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, .display-font {
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+    a { text-decoration: none; transition: color 0.3s ease, opacity 0.3s ease; }
+    .eyebrow {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.38em;
+      font-size: 0.8rem;
+      color: var(--gold);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .gold-text { color: var(--gold); }
+    .mahogany-bg { background-color: var(--mahogany); }
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      color: var(--gold);
+      margin: 0 auto 1.5rem;
+    }
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      width: 64px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .ornament::after {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .ornament .cross {
+      font-size: 1.1rem;
+      transform: translateY(-1px);
+    }
+    .section { padding: 6.5rem 0; }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+    }
+    .navbar.at-top { background-color: transparent; }
+    .navbar.scrolled {
+      background-color: var(--mahogany-deep);
+      box-shadow: 0 10px 30px var(--shadow);
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+    .navbar-brand {
+      font-family: var(--font-display);
+      color: var(--cream) !important;
+      line-height: 1.05;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .brand-mark {
+      width: 38px; height: 38px;
+      display: grid; place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      flex: 0 0 auto;
+    }
+    .brand-text small {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+    .navbar .nav-link {
+      color: var(--cream-dim) !important;
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+      font-size: 0.98rem;
+      margin: 0 0.35rem;
+      position: relative;
+    }
+    .navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link.active::after { width: 100%; }
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active { color: var(--cream) !important; }
+    .navbar-toggler {
+      border-color: rgba(201, 161, 74, 0.5);
+    }
+    .navbar-toggler:focus { box-shadow: none; }
+
+    /* Buttons */
+    .btn-gold {
+      background: var(--gold);
+      color: var(--mahogany-darkest);
+      border: 1px solid var(--gold);
+      font-family: var(--font-display);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: 0.8rem 1.9rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .btn-gold:hover {
+      background: var(--gold-soft);
+      border-color: var(--gold-soft);
+      color: var(--mahogany-darkest);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(201, 161, 74, 0.28);
+    }
+    .btn-outline-cream {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(246, 239, 225, 0.55);
+      font-family: var(--font-display);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding: 0.8rem 1.9rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-cream:hover {
+      background: var(--cream);
+      color: var(--mahogany-deep);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      color: var(--cream);
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("/images/hero-interior.png");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.08);
+      will-change: transform;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(33,10,7,0.78) 0%, rgba(33,10,7,0.42) 45%, rgba(33,10,7,0.85) 100%),
+        radial-gradient(circle at 50% 30%, rgba(94,31,23,0.15), rgba(33,10,7,0.6));
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 0 6rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      line-height: 1.04;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+      margin-bottom: 1.5rem;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      max-width: 620px;
+      color: var(--cream-dim);
+      margin-bottom: 2.4rem;
+    }
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--gold-soft);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .hero__scroll .mouse {
+      display: block;
+      width: 22px; height: 36px;
+      border: 1.5px solid var(--gold-soft);
+      border-radius: 12px;
+      margin: 0.6rem auto 0;
+      position: relative;
+    }
+    .hero__scroll .mouse::after {
+      content: "";
+      position: absolute;
+      top: 7px; left: 50%;
+      width: 3px; height: 7px;
+      background: var(--gold-soft);
+      border-radius: 2px;
+      transform: translateX(-50%);
+      animation: scrollDot 1.6s infinite;
+    }
+    @keyframes scrollDot {
+      0% { opacity: 0; transform: translate(-50%, 0); }
+      40% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 12px); }
+    }
+
+    /* Welcome */
+    .welcome { background: var(--cream); }
+    .welcome__img-wrap {
+      position: relative;
+      padding: 1rem;
+    }
+    .welcome__img-wrap img {
+      width: 100%;
+      border-radius: 3px;
+      box-shadow: 0 30px 60px rgba(33,10,7,0.3);
+    }
+    .welcome__img-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      transform: translate(18px, 18px);
+      z-index: -1;
+    }
+    .lead-paragraph {
+      font-size: 1.3rem;
+      color: var(--mahogany);
+      font-style: italic;
+    }
+
+    /* Services */
+    .services {
+      background: var(--mahogany-deep);
+      color: var(--cream);
+      position: relative;
+    }
+    .service-card {
+      background: rgba(246, 239, 225, 0.04);
+      border: 1px solid rgba(201, 161, 74, 0.25);
+      padding: 2.5rem 1.75rem;
+      height: 100%;
+      border-radius: 3px;
+      transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: rgba(201, 161, 74, 0.08);
+      border-color: var(--gold);
+    }
+    .service-card .day {
+      font-family: var(--font-display);
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    .service-card h3 {
+      font-size: 1.6rem;
+      margin: 0.5rem 0 0.25rem;
+    }
+    .service-card .time {
+      font-size: 1.05rem;
+      color: var(--cream-dim);
+    }
+
+    /* Quote band */
+    .quote-band {
+      position: relative;
+      color: var(--cream);
+      text-align: center;
+      padding: 8rem 0;
+      overflow: hidden;
+    }
+    .quote-band__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("/images/candles.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .quote-band__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(33,10,7,0.82), rgba(58,18,13,0.82));
+    }
+    .quote-band .container { position: relative; z-index: 2; }
+    .quote-band blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      line-height: 1.4;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+    }
+    .quote-band cite {
+      font-style: normal;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--gold-soft);
+    }
+
+    /* Ministries */
+    .ministries { background: var(--cream); }
+    .ministry-card {
+      background: #fff;
+      border: 1px solid var(--cream-dim);
+      border-radius: 4px;
+      padding: 2.5rem 1.75rem;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .ministry-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(33,10,7,0.15);
+      border-color: var(--gold);
+    }
+    .ministry-card .icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 1.4rem;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: var(--mahogany);
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+    .ministry-card h3 {
+      font-size: 1.4rem;
+      color: var(--mahogany);
+      margin-bottom: 0.6rem;
+    }
+    .ministry-card p { color: #5b4a44; margin-bottom: 0; }
+
+    /* Events */
+    .events { background: var(--mahogany-darkest); color: var(--cream); }
+    .event-row {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+      transition: padding-left 0.3s ease;
+    }
+    .event-row:hover { padding-left: 0.75rem; }
+    .event-date {
+      flex: 0 0 84px;
+      text-align: center;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      padding: 0.6rem 0.3rem;
+      color: var(--gold);
+    }
+    .event-date .d { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; }
+    .event-date .m { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
+    .event-info h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+    .event-info .meta { color: var(--cream-dim); font-size: 0.92rem; }
+
+    /* Visit / CTA */
+    .visit { background: var(--cream); }
+    .visit__card {
+      background: var(--mahogany);
+      color: var(--cream);
+      border-radius: 4px;
+      padding: 3.5rem;
+      box-shadow: 0 30px 60px rgba(33,10,7,0.25);
+    }
+    .visit__card .info-item { margin-bottom: 1.5rem; }
+    .visit__card .info-item .label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .visit__img {
+      background-image: url("/images/church-exterior.png");
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      min-height: 420px;
+      box-shadow: 0 30px 60px rgba(33,10,7,0.25);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--mahogany-darkest);
+      color: var(--cream-dim);
+      padding: 4.5rem 0 2rem;
+    }
+    .footer h5 {
+      color: var(--cream);
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+    .footer a { color: var(--cream-dim); display: inline-block; padding: 0.25rem 0; }
+    .footer a:hover { color: var(--gold); }
+    .footer .social a {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border: 1px solid rgba(201,161,74,0.4);
+      border-radius: 50%;
+      margin-right: 0.6rem;
+      color: var(--gold-soft);
+    }
+    .footer .social a:hover { background: var(--gold); color: var(--mahogany-darkest); }
+    .footer-bottom {
+      border-top: 1px solid rgba(201,161,74,0.2);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(231, 220, 198, 0.6);
+    }
+
+    /* Back to top */
+    .to-top {
+      position: fixed;
+      right: 1.5rem; bottom: 1.5rem;
+      width: 48px; height: 48px;
+      background: var(--mahogany);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition: all 0.35s ease;
+      z-index: 1030;
+      cursor: pointer;
+    }
+    .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .to-top:hover { background: var(--gold); color: var(--mahogany-darkest); }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---------- Page-specific styles ---------- */
+
+    /* ecclesiastical.html extra */
+    .curriculum-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .curriculum-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .curriculum-list li:last-child { border-bottom: none; }
+    .curriculum-list li i {
+      color: var(--gold);
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .curriculum-card {
+      background: #fff;
+      border-radius: 4px;
+      padding: 2rem 1.75rem;
+      height: 100%;
+      border: 1px solid var(--cream-dim);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .curriculum-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: var(--gold);
+    }
+    .curriculum-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--mahogany);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    .curriculum-card h3 i {
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    /* gallery.html extra */
+    .gallery-tabs {
+      border: none;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .gallery-tabs .nav-link {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink) !important;
+      border: 1px solid transparent !important;
+      padding: 0.6rem 1.8rem !important;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+      background: transparent;
+      opacity: 0.6;
+    }
+    .gallery-tabs .nav-link:hover {
+      opacity: 1;
+      color: var(--mahogany) !important;
+      background: rgba(201, 161, 74, 0.08);
+      border-color: var(--gold) !important;
+    }
+    .gallery-tabs .nav-link.active {
+      opacity: 1;
+      color: #fff !important;
+      background: var(--mahogany) !important;
+      border-color: var(--gold) !important;
+      box-shadow: 0 8px 24px rgba(58, 18, 13, 0.2);
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid var(--cream-dim);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: var(--gold);
+    }
+    .gallery-img-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 75%;
+      overflow: hidden;
+      background: var(--mahogany-darkest);
+    }
+    .gallery-img-wrapper img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gallery-item:hover .gallery-img-wrapper img {
+      transform: scale(1.06);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.8rem 1.5rem 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    }
+    .gallery-overlay h4 {
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin: 0 0 2px;
+      font-weight: 400;
+    }
+    .gallery-overlay p {
+      color: var(--gold-soft);
+      font-size: 0.75rem;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+    }
+    /* Lightbox modal overrides */
+    .modal-content {
+      background: transparent;
+      border: none;
+    }
+    .modal-body {
+      position: relative;
+      padding: 0;
+    }
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 1.6rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.12);
+      transform: rotate(90deg);
+    }
+
+    /* school.html extra */
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--cream-dim);
+      border-radius: 4px;
+      padding: 2rem 1rem;
+      text-align: center;
+      height: 100%;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .stat-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: var(--gold);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--mahogany);
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: #777;
+    }
+    .cta-box {
+      background: var(--mahogany);
+      color: var(--cream);
+      border-radius: 4px;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(201, 161, 74, 0.15);
+    }
+    .cta-box::before {
+      content: "✙";
+      position: absolute;
+      right: -20px;
+      bottom: -40px;
+      font-size: 16rem;
+      opacity: 0.04;
+      color: var(--gold);
+      pointer-events: none;
+    }
+    .cta-box h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    /* support.html extra */
+    .payment-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .payment-details li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 0.95rem;
+    }
+    .payment-details li:last-child { border-bottom: none; }
+    .payment-label {
+      font-weight: 500;
+      color: #666;
+    }
+    .payment-value {
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+    .payment-value.mpesa-accent { color: #4baf4f; }
+    .payment-value.font-monospace {
+      font-family: 'EB Garamond', monospace;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .support-card .small-note {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      width: 100%;
+    }
+    .support-card .small-note i { color: var(--gold); }
+    .support-card .small-note strong { color: var(--mahogany); }
+    .support-card .subtitle {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: 4px;
+      padding: 2rem 1.75rem;
+      height: 100%;
+      border: 1px solid var(--cream-dim);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: var(--gold);
+    }
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--mahogany);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(201, 161, 74, 0.15);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .info-card h3 i {
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .info-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: var(--mahogany-deep);
+        margin-top: 1rem;
+        padding: 1rem 1.25rem;
+        border-radius: 4px;
+        border: 1px solid rgba(201,161,74,0.25);
+      }
+      .quote-band__bg { background-attachment: scroll; }
+      .visit__card { padding: 2.25rem; }
+    }
+    @media (max-width: 575.98px) {
+      .section { padding: 4.5rem 0; }
+      .event-row { gap: 1rem; }
+      .stat-number { font-size: 2rem; }
+      .cta-box { padding: 2.5rem 1.5rem; }
+      .cta-box h3 { font-size: 1.5rem; }
+      .payment-details li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .payment-value { text-align: left; }
+      .support-card { padding: 1.75rem 1.25rem !important; }
+      .info-card { padding: 1.5rem 1.25rem; }
+      .gallery-tabs .nav-link {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.75rem;
+      }
+      .gallery-overlay {
+        padding: 1rem 0.8rem 0.8rem;
+      }
+      .gallery-overlay h4 { font-size: 0.95rem; }
+      .gallery-overlay p { font-size: 0.65rem; }
+    }
+
+    /* ---------- SPA page containers ---------- */
+    .page {
+      display: none; /* hidden by default */
+    }
+    .page.active {
+      display: block; /* shown when active */
+    }
+  </style>
 </head>
 <body>
 
-
-
-  <!-- ===== Navbar ===== -->
+  <!-- ============================================================ -->
+  <!-- ===== NAVBAR (shared across all pages) ===== -->
+  <!-- ============================================================ -->
   <nav class="navbar navbar-expand-lg fixed-top at-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="/index.html">
+      <a class="navbar-brand" href="#home">
         <span class="brand-mark"><i class="bi bi-plus-lg"></i></span>
         <span class="brand-text">
           St. Clement
@@ -37,248 +896,1334 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#welcome">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ministries">Ministries</a></li>
-          <li class="nav-item"><a class="nav-link" href="#events">Campus</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-gold" href="#visit">Plan a Visit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#biography">Biography</a></li>
+          <li class="nav-item"><a class="nav-link" href="#campus">Campus</a></li>
+          <li class="nav-item"><a class="nav-link" href="#school">School</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ecclesiastical">Ecclesiastical</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-gold" id="planVisitBtn" href="#">Plan a Visit</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ===== Hero ===== -->
-  <header class="hero" id="home">
-    <div class="hero__bg" id="heroBg"></div>
-    <div class="hero__overlay"></div>
-    <div class="container hero__content">
-      <div class="row">
-        <div class="col-lg-9">
-          <span class="eyebrow reveal">Archdiocese of Nairobi</span>
-          <h1 class="reveal">Preserving Holy Tradition,<br>Serving Our Community</h1>
-          <p class="lead reveal">
-            Rooted in the ancient Christian Faith of the Holy Orthodox Church of Alexandria, St. Clement in Riruta is a vibrant beacon of worship, education, and holistic empowerment in Dagoretti.
-          </p>
-          <div class="d-flex flex-wrap gap-3 reveal">
-            <a href="#services" class="btn btn-gold">Service Times</a>
-            <a href="#welcome" class="btn btn-outline-cream">Explore Our Mission</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero__scroll d-none d-md-block">
-      Scroll
-      <span class="mouse"></span>
-    </div>
-  </header>
+  <!-- ============================================================ -->
+  <!-- ===== PAGE CONTAINERS ===== -->
+  <!-- ============================================================ -->
 
-  <!-- ===== Welcome ===== -->
-  <section class="section welcome" id="welcome">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6 reveal">
-          <div class="welcome__img-wrap">
-            <img src="/images/icon-detail.png" alt="A traditional Byzantine icon with gold leaf halo" />
-          </div>
-        </div>
-        <div class="col-lg-6 reveal">
-          <span class="eyebrow">Our Foundation</span>
-          <h2 class="section-title">The Mission at Riruta</h2>
-          <p class="lead-paragraph">
-            An active, indigenous Parish community of the Orthodox Patriarchate of Alexandria and All Africa.
-          </p>
-          <p>
-            Operating under the structural governance of the Holy Metropolis of Nairobi, St. Clement keeps unchanged historical apostolic frameworks alive today through liturgical and sacramental prayer.
-          </p>
-          <p>
-            Beyond worship, the mission provides comprehensive structural interventions to lift families up within Riruta-Satellite neighborhoods through foundational primary education and daily nutrition programs.
-          </p>
-          <a href="#events" class="btn btn-gold mt-2">Explore the Campus</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Service Times ===== -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
-        <span class="eyebrow">The Rhythm of Prayer</span>
-        <h2 class="section-title">Liturgical Services</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="service-card">
-            <span class="day">Saturday</span>
-            <h3>Saturday Vespers</h3>
-            <p class="time">5:00 – 6:00 PM</p>
-            <p class="mb-0 small">Evening communal prayer inside the early Church framework.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="service-card">
-            <span class="day">Sunday</span>
-            <h3>Orthros (Matins)</h3>
-            <p class="time">8:00 – 9:15 AM</p>
-            <p class="mb-0 small">Morning preparation hymns and prayers.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="service-card">
-            <span class="day">Sunday</span>
-            <h3>Divine Liturgy</h3>
-            <p class="time">9:15 – 11:30 AM</p>
-            <p class="mb-0 small">Eucharistic worship and ancient Christian liturgy.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="service-card">
-            <span class="day">Weekday</span>
-            <h3>Feast Day Liturgies</h3>
-            <p class="time">7:30 – 9:30 AM</p>
-            <p class="mb-0 small">Celebrating liturgical feasts throughout the year.</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-5 reveal">
-        <a href="#visit" class="btn btn-outline-cream">Plan Your Visit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Quote band ===== -->
-  <section class="quote-band">
-    <div class="quote-band__bg" aria-hidden="true"></div>
-    <div class="quote-band__overlay" aria-hidden="true"></div>
-    <div class="container reveal">
-      <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
-      <blockquote>
-        &ldquo;Experience the divine beauty and spiritual fullness of ancient Eastern Christian worship.&rdquo;
-      </blockquote>
-      <cite>— Eucharistic Worship Pillar</cite>
-    </div>
-  </section>
-
-  <!-- ===== Ministries ===== -->
-  <section class="section ministries" id="ministries">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
-        <span class="eyebrow">Walk Together in Faith</span>
-        <h2 class="section-title">Parish &amp; School Impact</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="ministry-card">
-            <div class="icon"><i class="bi bi-book"></i></div>
-            <h3>St. Clement School</h3>
-            <p>Founded in September 2002. Providing exceptional, entirely 100% free foundational primary education.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="ministry-card">
-            <div class="icon"><i class="bi bi-heart-pulse"></i></div>
-            <h3>Free Student Care</h3>
-            <p>Ensuring essential school uniforms and consistent medical care to underprivileged community children.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="ministry-card">
-            <div class="icon"><i class="bi bi-heart"></i></div>
-            <h3>Daily Feeding Program</h3>
-            <p>Serving nutritious hot breakfasts and lunches every single school day to hundreds of students.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="ministry-card">
-            <div class="icon"><i class="bi bi-people"></i></div>
-            <h3>Community Growth</h3>
-            <p>Active structural interventions supporting over 450+ active students and breaking dependency traps.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Events ===== -->
-  <section class="section events" id="events">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5 reveal">
-          <span class="eyebrow">The Compound Centers</span>
-          <h2 class="section-title">A Pan-African Center of Theological Learning</h2>
-          <p class="mb-4">Our compound on Kabiria Road houses critical foundational arms of the wider Orthodox Church in Africa. This strategic alignment transforms our local parish context into a world-class center that actively shapes leaders.</p>
-          <a href="#visit" class="btn btn-gold">Make a Donation</a>
-        </div>
-        <div class="col-lg-7 reveal">
-          <div class="event-row">
-            <div class="event-info">
-              <h3>Orthodox College of Africa</h3>
-              <div class="meta">Co-located campus institution training professional educators and leaders.</div>
+  <!-- ===== PAGE: HOME (index) ===== -->
+  <div class="page active" id="page-home">
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <div class="hero__bg" id="heroBgHome"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">Archdiocese of Nairobi</span>
+            <h1 class="reveal">Preserving Holy Tradition,<br>Serving Our Community</h1>
+            <p class="lead reveal">
+              Rooted in the ancient Christian Faith of the Holy Orthodox Church of Alexandria, St. Clement in Riruta is a vibrant beacon of worship, education, and holistic empowerment in Dagoretti.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#services-home" class="btn btn-gold">Service Times</a>
+              <a href="#welcome-home" class="btn btn-outline-cream">Explore Our Mission</a>
             </div>
           </div>
-          <div class="event-row">
-            <div class="event-info">
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Welcome -->
+    <section class="section welcome" id="welcome-home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome__img-wrap">
+              <img src="/images/icon-detail.png" alt="A traditional Byzantine icon with gold leaf halo" />
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">Our Foundation</span>
+            <h2 class="section-title">The Mission at Riruta</h2>
+            <p class="lead-paragraph">
+              An active, indigenous Parish community of the Orthodox Patriarchate of Alexandria and All Africa.
+            </p>
+            <p>
+              Operating under the structural governance of the Holy Metropolis of Nairobi, St. Clement keeps unchanged historical apostolic frameworks alive today through liturgical and sacramental prayer.
+            </p>
+            <p>
+              Beyond worship, the mission provides comprehensive structural interventions to lift families up within Riruta-Satellite neighborhoods through foundational primary education and daily nutrition programs.
+            </p>
+            <a href="#events-home" class="btn btn-gold mt-2">Explore the Campus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Times -->
+    <section class="section services" id="services-home">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">The Rhythm of Prayer</span>
+          <h2 class="section-title">Liturgical Services</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="service-card">
+              <span class="day">Saturday</span>
+              <h3>Saturday Vespers</h3>
+              <p class="time">5:00 – 6:00 PM</p>
+              <p class="mb-0 small">Evening communal prayer inside the early Church framework.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="service-card">
+              <span class="day">Sunday</span>
+              <h3>Orthros (Matins)</h3>
+              <p class="time">8:00 – 9:15 AM</p>
+              <p class="mb-0 small">Morning preparation hymns and prayers.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="service-card">
+              <span class="day">Sunday</span>
+              <h3>Divine Liturgy</h3>
+              <p class="time">9:15 – 11:30 AM</p>
+              <p class="mb-0 small">Eucharistic worship and ancient Christian liturgy.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="service-card">
+              <span class="day">Weekday</span>
+              <h3>Feast Day Liturgies</h3>
+              <p class="time">7:30 – 9:30 AM</p>
+              <p class="mb-0 small">Celebrating liturgical feasts throughout the year.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5 reveal">
+          <a href="#visit-home" class="btn btn-outline-cream">Plan Your Visit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
+        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+        <blockquote>
+          &ldquo;Experience the divine beauty and spiritual fullness of ancient Eastern Christian worship.&rdquo;
+        </blockquote>
+        <cite>— Eucharistic Worship Pillar</cite>
+      </div>
+    </section>
+
+    <!-- Ministries -->
+    <section class="section ministries" id="ministries-home">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Walk Together in Faith</span>
+          <h2 class="section-title">Parish &amp; School Impact</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <h3>St. Clement School</h3>
+              <p>Founded in September 2002. Providing exceptional, entirely 100% free foundational primary education.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-heart-pulse"></i></div>
+              <h3>Free Student Care</h3>
+              <p>Ensuring essential school uniforms and consistent medical care to underprivileged community children.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-heart"></i></div>
+              <h3>Daily Feeding Program</h3>
+              <p>Serving nutritious hot breakfasts and lunches every single school day to hundreds of students.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-people"></i></div>
+              <h3>Community Growth</h3>
+              <p>Active structural interventions supporting over 450+ active students and breaking dependency traps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events (Campus highlights) -->
+    <section class="section events" id="events-home">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <span class="eyebrow">The Compound Centers</span>
+            <h2 class="section-title">A Pan-African Center of Theological Learning</h2>
+            <p class="mb-4">Our compound on Kabiria Road houses critical foundational arms of the wider Orthodox Church in Africa. This strategic alignment transforms our local parish context into a world-class center that actively shapes leaders.</p>
+            <a href="#visit-home" class="btn btn-gold">Make a Donation</a>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Orthodox College of Africa</h3>
+                <div class="meta">Co-located campus institution training professional educators and leaders.</div>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Patriarchal Ecclesiastical School</h3>
+                <div class="meta">Dedicated theological learning facility named after Archbishop Makarios III.</div>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Archbishop Makarios Seminary</h3>
+                <div class="meta">Actively shaping and training Orthodox seminarians from all corners of the continent.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-home">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-home -->
+
+
+  <!-- ===== PAGE: BIOGRAPHY ===== -->
+  <div class="page" id="page-biography">
+    <!-- Hero -->
+    <header class="hero" id="hero-biography">
+      <div class="hero__bg" id="heroBgBiography"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">A Life of Faith &amp; Mission</span>
+            <h1 class="reveal">Archbishop Makarios<br>Tillyrides</h1>
+            <p class="lead reveal">
+              Archbishop of Nairobi and Exarch of All Eastern Africa — a visionary leader who has spent nearly five decades building the Orthodox Church in Kenya and across the continent.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#biography-details" class="btn btn-gold">Read His Story</a>
+              <a href="#legacy-biography" class="btn btn-outline-cream">Explore His Legacy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Biography details (welcome) -->
+    <section class="section welcome" id="biography-details">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome__img-wrap">
+              <img src="https://scontent-mba2-1.xx.fbcdn.net/v/t39.99422-6/772108962_28532346289696554_2658013753108925784_n.png?stp=dst-jpg_tt6&cstp=mx1066x1600&ctp=s1066x1600&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3yH2z-oSoTUQ7kNvwHWFP1K&_nc_oc=AdrRKEum44HlF5aK0KFHZw-FgIf12kqrBZw8ecBKEia4HhHvHwohiM89B6tkR9KG05k&_nc_zt=14&_nc_ht=scontent-mba2-1.xx&_nc_gid=OzvnQaG5sWixq0sFAF4Epg&_nc_ss=7b289&oh=00_AQEDduw1q-VGo2VBnWy6wkFo2torhJm1XHyUdJ3mXar3sw&oe=6A8BC1FB" alt="Byzantine icon with gold leaf halo" />
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">His Eminence</span>
+            <h2 class="section-title">Archbishop Makarios of Nairobi</h2>
+            <p class="lead-paragraph">
+              Born Andreas Tillyrides in Limassol, Cyprus, on April 18, 1945, he is a Cypriot bishop of the Greek Orthodox Church of Alexandria.[reference:0]
+            </p>
+            <p>
+              His journey from a small Mediterranean island to the heart of Africa is a story of divine calling, scholarly excellence, and unwavering commitment to the Orthodox faith. After completing his PhD in Church History at Oxford University under the supervision of Bishop Kallistos Ware, he was sent to Nairobi in 1977 by Archbishop Makarios III of Cyprus to establish a Patriarchal Seminary in Riruta.[reference:1][reference:2]
+            </p>
+            <p>
+              Though he arrived as a layman, his heart was immediately stirred. As he later reflected: <em>“A longing to stay and serve, a desire to know the people of the land.”</em>[reference:3] That longing became a lifelong mission.
+            </p>
+            <a href="#legacy-biography" class="btn btn-gold mt-2">Discover His Legacy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Details (services style) -->
+    <section class="section services" id="details-biography">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">A Scholar &amp; Pastor</span>
+          <h2 class="section-title">Personal Details &amp; Education</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card">
+              <span class="day">Birth</span>
+              <h3>Andreas Tillyrides</h3>
+              <p class="time">April 18, 1945 · Limassol, Cyprus</p>
+              <p class="mb-0 small">Native Greek speaker; fluent in English, French, Russian, Italian, and multiple African dialects.[reference:4]</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card">
+              <span class="day">Theological Formation</span>
+              <h3>St. Sergius Institute, Paris</h3>
+              <p class="time">1968 – 1972</p>
+              <p class="mb-0 small">Studied Theology while also attending the Collège de France and the École Pratique des Hautes Études.[reference:5]</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card">
+              <span class="day">Doctorate</span>
+              <h3>Oxford University</h3>
+              <p class="time">PhD in Church History · 1976</p>
+              <p class="mb-0 small">Under the supervision of Bishop Kallistos Ware. Later pursued post-doctoral research at Louvain University in Belgium.[reference:6][reference:7]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
+        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+        <blockquote>
+          &ldquo;I chose to love. I chose to forgive. And in doing so, I discovered the greatest joy: that true peace comes from a heart that holds no grudges.&rdquo;
+        </blockquote>
+        <cite>— Archbishop Makarios, on his 80th birthday[reference:8]</cite>
+      </div>
+    </section>
+
+    <!-- Key Milestones (ministries style) -->
+    <section class="section ministries" id="legacy-biography">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">A Life of Service</span>
+          <h2 class="section-title">Key Milestones</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-building"></i></div>
+              <h3>1977</h3>
+              <p>Sent to Nairobi by Archbishop Makarios III to establish the Patriarchal Seminary in Riruta.[reference:9]</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-translate"></i></div>
+              <h3>1981–1992</h3>
+              <p>General Dean of the Patriarchal Seminary; developed liturgy translations for 15+ African languages.[reference:10]</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-star"></i></div>
+              <h3>July 1992</h3>
+              <p>Tonsured a monk, ordained deacon and priest, and consecrated first Bishop of Riruta — all in one week.[reference:11][reference:12]</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-globe"></i></div>
+              <h3>1998 – 2001</h3>
+              <p>Elected Archbishop of Zimbabwe (1998) and later transferred to the See of Nairobi as Archbishop of Kenya (2001).[reference:13]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legacy & Writings (events style) -->
+    <section class="section events" id="writings-biography">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <span class="eyebrow">His Enduring Impact</span>
+            <h2 class="section-title">Legacy &amp; Writings</h2>
+            <p class="mb-4">
+              Under Archbishop Makarios' direction, the Orthodox Church has translated liturgical texts into languages that had never been written before.[reference:14] He oversaw the consecration of the first two native Kenyan bishops: Athanasius (Akunda) of Kisumu in 2015 and Neophytos (Kongai) of Nyeri in 2016.[reference:15]
+            </p>
+            <p class="mb-4">
+              He has authored hundreds of theological and scientific articles and has been a member of international theological dialogues with the Roman Catholic Church, the Reformed, and the Lutherans.[reference:16][reference:17]
+            </p>
+            <a href="#visit-biography" class="btn btn-gold">Support Our Mission</a>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Translator of the Faith</h3>
+                <div class="meta">Translated Orthodox liturgy into over 15 African languages, including some previously unwritten dialects.[reference:18]</div>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Builder of Institutions</h3>
+                <div class="meta">Founded St. Clement School (2002), the Patriarchal Seminary, and nurtured the Orthodox College of Africa and Makarios Seminary.</div>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-info">
+                <h3>Father of African Orthodoxy</h3>
+                <div class="meta">Consecrated the first native Kenyan bishops, ensuring the future of the Orthodox Church in Africa is led by African clergy.[reference:19]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-biography">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-biography -->
+
+
+  <!-- ===== PAGE: CAMPUS ===== -->
+  <div class="page" id="page-campus">
+    <!-- Hero -->
+    <header class="hero" id="hero-campus">
+      <div class="hero__bg" id="heroBgCampus"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">A Pan‑African Center</span>
+            <h1 class="reveal">The Campus<br>of Theological Excellence</h1>
+            <p class="lead reveal">
+              The St. Clement missionary compound on Kabiria Road houses a world‑class institutional collective that influences the growth of the Orthodox Church across Africa.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#institutions-campus" class="btn btn-gold">Explore the Institutions</a>
+              <a href="#visit-campus" class="btn btn-outline-cream">Find Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="section welcome" id="overview-campus">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome__img-wrap">
+              <img src="/images/icon-detail.png" alt="A traditional Byzantine icon with gold leaf halo" />
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">Strategic Hub</span>
+            <h2 class="section-title">A Unified Learning Ecosystem</h2>
+            <p class="lead-paragraph">
+              By co‑locating strategic higher education academies, secondary seminaries, and primary structures onto a unified hub, the Archdiocese of Nairobi creates an interconnected ecosystem.
+            </p>
+            <p>
+              Here, local pastoral operations sit right alongside continental academic tracks, transforming our parish boundaries into a pivotal learning campus where future priests, community leaders, and professional teachers gather from dozens of African nations.
+            </p>
+            <a href="#institutions-campus" class="btn btn-gold mt-2">Discover the Institutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Institutions (ministries style) -->
+    <section class="section ministries" id="institutions-campus">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">The Compound Arms</span>
+          <h2 class="section-title">Our Institutions</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-book"></i></div>
               <h3>Patriarchal Ecclesiastical School</h3>
-              <div class="meta">Dedicated theological learning facility named after Archbishop Makarios III.</div>
+              <p style="font-size:0.85rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.05em;">Archbishop Makarios III</p>
+              <p>Providing standard secondary theological tracks and deep administrative leadership preparation for clergy, teachers, and catechists serving regional missionary fields.</p>
+              <a href="#ecclesiastical" class="btn btn-gold mt-3" style="width:100%;">Learn More</a>
             </div>
           </div>
-          <div class="event-row">
-            <div class="event-info">
-              <h3>Archbishop Makarios Seminary</h3>
-              <div class="meta">Actively shaping and training Orthodox seminarians from all corners of the continent.</div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-building"></i></div>
+              <h3>Orthodox College of Africa</h3>
+              <p style="font-size:0.85rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.05em;">Higher Education Hub</p>
+              <p>A recognised institutional facility delivering premium accredited diploma and degree tracks that pair technical fields with historical theological fundamentals.</p>
+              <a href="https://orthodoxcollegeofafrica.vercel.app/" target="_blank" class="btn btn-gold mt-3" style="width:100%;">Visit External Portal</a>
             </div>
           </div>
+          <!-- Third institution omitted in original campus.html (only two shown) – we add a placeholder? Actually original had only two. We'll keep two. -->
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== Visit / CTA ===== -->
-  <section class="section visit" id="visit">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
         <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
-        <span class="eyebrow">We Would Love to Meet You</span>
-        <h2 class="section-title">Location &amp; Connection</h2>
+        <blockquote>
+          &ldquo;The campus is not just a place of learning — it is a living witness to the ancient faith, equipping Africa’s future leaders.&rdquo;
+        </blockquote>
+        <cite>— Archbishop Makarios of Nairobi</cite>
       </div>
-      <div class="row g-4 align-items-stretch">
-        <div class="col-lg-6 reveal">
-          <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-campus">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
         </div>
-        <div class="col-lg-6 reveal">
-          <div class="visit__card h-100">
-            <div class="info-item">
-              <span class="label">Location</span>
-              Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
             </div>
-            <div class="info-item">
-              <span class="label">Liturgical Schedule</span>
-              Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
-            </div>
-            <div class="info-item">
-              <span class="label">Contact</span>
-              info@stclementriruta.org · PO Box Details / Parish Office Lines
-            </div>
-            <div class="info-item">
-              <span class="label">Support Our Mission</span>
-              Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
-            </div>
-            <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div><!-- /page-campus -->
 
-  <!-- ===== Footer ===== -->
+
+  <!-- ===== PAGE: ECCLESIASTICAL ===== -->
+  <div class="page" id="page-ecclesiastical">
+    <!-- Hero -->
+    <header class="hero" id="hero-ecclesiastical">
+      <div class="hero__bg" id="heroBgEcclesiastical"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">The Compound</span>
+            <h1 class="reveal">Patriarchal Ecclesiastical School</h1>
+            <p class="lead reveal">
+              Preserving historical apostolic discipline while fostering structural administrative competency for the mission fields of East Africa.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#overview-ecclesiastical" class="btn btn-gold">Learn More</a>
+              <a href="#campus" class="btn btn-outline-cream">Back to Campus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="section welcome" id="overview-ecclesiastical">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome__img-wrap">
+              <img src="/images/icon-detail.png" alt="A traditional Byzantine icon with gold leaf halo" />
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">Formation &amp; Tradition</span>
+            <h2 class="section-title">Archbishop Makarios III Seminary Secondary Track</h2>
+            <p class="lead-paragraph">
+              Operating as an integrated structural arm of the historical Riruta mission compound, the Patriarchal Ecclesiastical School provides essential secondary‑level theological training and preparatory formation.
+            </p>
+            <p>
+              Named in honor of Archbishop Makarios III, this specialized academy anchors young candidates, catechists, and future community leaders within the rigorous rhythmic life of the Orthodox Church, creating a vital foundation for advance pastoral service.
+            </p>
+            <a href="#pillars-ecclesiastical" class="btn btn-gold mt-2">Explore the Pillars</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars (ministries style) -->
+    <section class="section ministries" id="pillars-ecclesiastical">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Core Disciplines</span>
+          <h2 class="section-title">School Pillars</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <h3>Theological Base</h3>
+              <p>Systematic grounding in Orthodox Dogmatics, Scripture commentary, Patristics, and the canonical frameworks of the ancient Patriarchate of Alexandria.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-music-note"></i></div>
+              <h3>Liturgical Arts</h3>
+              <p>Comprehensive tracking in Byzantine music theory, choral arrangement, vocal performance, and precise liturgical order for structural church services.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-people"></i></div>
+              <h3>Mission Leadership</h3>
+              <p>Practical development in community mobilization, primary education oversight, parish accounting, and foundational administrative operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
+        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+        <blockquote>
+          &ldquo;Preserving historical apostolic discipline while fostering structural administrative competency for the mission fields of East Africa.&rdquo;
+        </blockquote>
+        <cite>— Archbishop Makarios III</cite>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="section" id="curriculum-ecclesiastical">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Academic Structure</span>
+          <h2 class="section-title">Program Core Focus Areas</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6 reveal">
+            <div class="curriculum-card">
+              <h3><i class="bi bi-scroll"></i> Scriptural &amp; Historical Studies</h3>
+              <ul class="curriculum-list">
+                <li><i class="bi bi-check-circle"></i> Old and New Testament Exegesis and Analysis</li>
+                <li><i class="bi bi-check-circle"></i> History of the Patriarchate of Alexandria &amp; All Africa</li>
+                <li><i class="bi bi-check-circle"></i> Introduction to the Early Church Fathers (Patristics)</li>
+                <li><i class="bi bi-check-circle"></i> Orthodox Catechesis and Missionary Methodology</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="curriculum-card">
+              <h3><i class="bi bi-hands"></i> Practical &amp; Liturgical Studies</h3>
+              <ul class="curriculum-list">
+                <li><i class="bi bi-check-circle"></i> Byzantine Chant Chantography &amp; Ecclesiastical Notation</li>
+                <li><i class="bi bi-check-circle"></i> Liturgics: Rubrics, Cycles, and Vestment Care Protocols</li>
+                <li><i class="bi bi-check-circle"></i> Basic Parish Administration and Financial Stewardship</li>
+                <li><i class="bi bi-check-circle"></i> Community Development &amp; Social Intervention Strategies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-ecclesiastical">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-ecclesiastical -->
+
+
+  <!-- ===== PAGE: GALLERY ===== -->
+  <div class="page" id="page-gallery">
+    <!-- Hero -->
+    <header class="hero" id="hero-gallery">
+      <div class="hero__bg" id="heroBgGallery"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">Visual Archive</span>
+            <h1 class="reveal">Moments in Mission</h1>
+            <p class="lead reveal">
+              A selection of photographs capturing worship, community life, and the vibrant campus of St. Clement Orthodox Church &amp; Mission.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#gallery-section" class="btn btn-gold">View Gallery</a>
+              <a href="#home" class="btn btn-outline-cream">Back to Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery-section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Our Story in Images</span>
+          <h2 class="section-title">Gallery</h2>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs gallery-tabs" id="galleryTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="church-tab" data-bs-toggle="tab" data-bs-target="#church-gallery" type="button" role="tab" aria-controls="church-gallery" aria-selected="true">
+              <i class="bi bi-building me-2"></i>Church Compound
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="clergy-tab" data-bs-toggle="tab" data-bs-target="#clergy-gallery" type="button" role="tab" aria-controls="clergy-gallery" aria-selected="false">
+              <i class="bi bi-people me-2"></i>Clergy &amp; Leadership
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="galleryTabsContent">
+          <!-- Church Compound -->
+          <div class="tab-pane fade show active" id="church-gallery" role="tabpanel" aria-labelledby="church-tab">
+            <div class="row g-4">
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1548625361-155defe2b940?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1548625361-155defe2b940?q=80&w=800" alt="Main Parish Temple Facade" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>Parish Temple Facade</h4>
+                    <p>Main Compound Structures</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=800" alt="Holy Altar & Sanctuary Layout" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>The Holy Altar</h4>
+                    <p>Interior Sanctuary Room</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800" alt="Institutional Campus Grounds" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>The Institutional Campus</h4>
+                    <p>Riruta Ground Layouts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Clergy & Leadership -->
+          <div class="tab-pane fade" id="clergy-gallery" role="tabpanel" aria-labelledby="clergy-tab">
+            <div class="row g-4">
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800" alt="Parish Clergy Assembly" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>Parish Clergy Assembly</h4>
+                    <p>Eucharistic Celebration Leadership</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800" alt="Mission Administrative Council" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>Administrative Council</h4>
+                    <p>Institution Executive Trustees</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 reveal">
+                <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img-src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800">
+                  <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800" alt="Seminary Instructors & Mentors" loading="lazy">
+                  </div>
+                  <div class="gallery-overlay">
+                    <h4>Seminary Faculty</h4>
+                    <p>Theological Lecturers</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-gallery">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-gallery -->
+
+
+  <!-- ===== PAGE: SCHOOL ===== -->
+  <div class="page" id="page-school">
+    <!-- Hero -->
+    <header class="hero" id="hero-school">
+      <div class="hero__bg" id="heroBgSchool"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">Our Primary School</span>
+            <h1 class="reveal">Free Foundational Education</h1>
+            <p class="lead reveal">
+              Founded in September 2002, St. Clement Primary School breaks socio‑economic barriers by providing comprehensive, high‑quality primary education completely free of charge.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#overview-school" class="btn btn-gold">Learn More</a>
+              <a href="#support-school" class="btn btn-outline-cream">Support the School</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Overview + Stats -->
+    <section class="section" id="overview-school">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Our Mission</span>
+          <h2 class="section-title">Holistic Education for All</h2>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7 reveal">
+            <p class="lead-paragraph">
+              We cater specifically to underprivileged children within the Riruta‑Satellite neighborhoods of Dagoretti. Recognizing that structural community advancement requires holistic support systems, our school handles more than academic curricula.
+            </p>
+            <p>
+              We ensure every enrolled student receives critical daily nutrition, standard school uniforms, basic stationery materials, and primary healthcare checkups inside a secure, loving, and values‑based environment.
+            </p>
+            <p>
+              By removing the direct financial burdens of schooling from vulnerable families, St. Clement prevents school dropouts and secures a clear structural pathway toward secondary education and professional self‑reliance.
+            </p>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">450+</div>
+                  <div class="stat-label">Active Students</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Free Tuition</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">2002</div>
+                  <div class="stat-label">Year Founded</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">2</div>
+                  <div class="stat-label">Daily Hot Meals</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Holistic Care (ministries style) -->
+    <section class="section ministries" id="care-school">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Beyond the Classroom</span>
+          <h2 class="section-title">Holistic Student Care</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-apple"></i></div>
+              <h3>Daily Feeding Program</h3>
+              <p>Physical nutrition underpins all mental development. We serve nutritious hot breakfasts and lunches every single school day to ensure no child sits in a classroom hungry.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-shirt"></i></div>
+              <h3>Uniforms &amp; Welfare</h3>
+              <p>To eliminate social stigmas and foster community dignity, the school supplies essential school uniforms, learning sportswear, shoes, and direct instructional books completely free.</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="ministry-card">
+              <div class="icon"><i class="bi bi-heart-pulse"></i></div>
+              <h3>Health &amp; Well‑being</h3>
+              <p>We coordinate regular healthcare monitoring, immunization reviews, and safe sanitation practices, protecting growing children from common, preventable illnesses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
+        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+        <blockquote>
+          &ldquo;Every child deserves the chance to learn, to grow, and to dream — without barriers.&rdquo;
+        </blockquote>
+        <cite>— St. Clement School Mission Statement</cite>
+      </div>
+    </section>
+
+    <!-- Support CTA -->
+    <section class="section" id="support-school">
+      <div class="container">
+        <div class="row justify-content-center reveal">
+          <div class="col-lg-10">
+            <div class="cta-box">
+              <h3>Partner With St. Clement School</h3>
+              <p>Our ability to maintain completely free tuition, scale feeding resources, and employ dedicated local educators rests entirely upon the generosity of partners and donors. Your contribution directly changes early realities for children in Riruta.</p>
+              <a href="#support" class="btn btn-gold">Sponsor a Child's Education</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-school">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Liturgical Schedule</span>
+                Saturday Vespers 5:00 PM · Sunday Divine Liturgy 9:15 AM
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                info@stclementriruta.org · PO Box Details / Parish Office Lines
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Support Us / Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-school -->
+
+
+  <!-- ===== PAGE: SUPPORT ===== -->
+  <div class="page" id="page-support">
+    <!-- Hero -->
+    <header class="hero" id="hero-support">
+      <div class="hero__bg" id="heroBgSupport"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="row">
+          <div class="col-lg-9">
+            <span class="eyebrow reveal">Partner With Us</span>
+            <h1 class="reveal">Support Our<br>Mission</h1>
+            <p class="lead reveal">
+              Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#pathways-support" class="btn btn-gold">Ways to Give</a>
+              <a href="#methods-support" class="btn btn-outline-cream">Payment Methods</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll d-none d-md-block">
+        Scroll
+        <span class="mouse"></span>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="section welcome" id="overview-support">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="welcome__img-wrap">
+              <img src="/images/icon-detail.png" alt="A traditional Byzantine icon with gold leaf halo" />
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">How to Give</span>
+            <h2 class="section-title">Partnership Pathways</h2>
+            <p class="lead-paragraph">
+              Your generosity sustains the St. Clement mission — from the daily feeding of hundreds of schoolchildren to the training of future clergy and leaders for the Orthodox Church in Africa.
+            </p>
+            <p>
+              Every contribution, whether large or small, directly impacts the lives of vulnerable families in Riruta-Satellite and beyond. We invite you to partner with us in preserving Holy Tradition and serving our community.
+            </p>
+            <a href="#pathways-support" class="btn btn-gold mt-2">Explore Ways to Give</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pathways (ministries style) -->
+    <section class="section ministries" id="pathways-support">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">How to Give</span>
+          <h2 class="section-title">Partnership Pathways</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 reveal">
+            <div class="ministry-card support-card" style="padding: 2.5rem 1.75rem;">
+              <div class="icon"><i class="bi bi-person-child"></i></div>
+              <h3>Sponsor A Child</h3>
+              <div class="subtitle">Educational &amp; Nutritional Direct Aid</div>
+              <p>Provide direct social support to vulnerable students enrolled inside St. Clement Primary School. Sponsorship contributions directly clear structural tuition deficits, purchase full mandatory learning material uniforms, and secure regular entry into the daily hot food breakfast and lunch program grids.</p>
+              <div class="small-note">
+                <i class="bi bi-info-circle"></i> Use the reference identifier <strong>"SPONSOR"</strong> followed by the child's assignment code during financial routing.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 reveal">
+            <div class="ministry-card support-card" style="padding: 2.5rem 1.75rem;">
+              <div class="icon"><i class="bi bi-handshake"></i></div>
+              <h3>Make A Donation</h3>
+              <div class="subtitle">Missionary &amp; Compound Infrastructure Fund</div>
+              <p>Sustain the foundational development and maintenance operations of the extensive St. Clement missionary compound on Kabiria Road. General philanthropy directly drives the preservation of historical temple structures, purchases essential altar requirements, supports administrative staff tracking, and scales regional theological missions.</p>
+              <div class="small-note">
+                <i class="bi bi-info-circle"></i> Use the reference identifier <strong>"DONATION"</strong> or specify an arm like <strong>"SEMINARY"</strong> during payment tracking.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote band -->
+    <section class="quote-band">
+      <div class="quote-band__bg" aria-hidden="true"></div>
+      <div class="quote-band__overlay" aria-hidden="true"></div>
+      <div class="container reveal">
+        <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+        <blockquote>
+          &ldquo;Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.&rdquo;
+        </blockquote>
+        <cite>— St. Clement Mission Statement</cite>
+      </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="section" id="methods-support">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">Financial Channels</span>
+          <h2 class="section-title">Payment Methods</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 reveal">
+            <div class="info-card">
+              <h3><i class="bi bi-phone"></i> Mobile Money Payments</h3>
+              <p>Direct secure transfers via localized mobile financial systems inside Kenya.</p>
+              <ul class="payment-details">
+                <li><span class="payment-label">Provider</span><span class="payment-value mpesa-accent">Safaricom M-PESA</span></li>
+                <li><span class="payment-label">Payment Type</span><span class="payment-value">Lipa na M-PESA (Paybill)</span></li>
+                <li><span class="payment-label">Business Number</span><span class="payment-value font-monospace">000000</span></li>
+                <li><span class="payment-label">Account Name</span><span class="payment-value font-monospace">ST CLEMENT</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 reveal">
+            <div class="info-card">
+              <h3><i class="bi bi-bank"></i> Direct Bank Transfers</h3>
+              <p>Ideal for large structural contributions, corporate matches, and recurring institutional giving loops.</p>
+              <ul class="payment-details">
+                <li><span class="payment-label">Bank Name</span><span class="payment-value">Absa Bank Kenya PLC</span></li>
+                <li><span class="payment-label">Branch</span><span class="payment-value">Nairobi Corporate / Local</span></li>
+                <li><span class="payment-label">Account Title</span><span class="payment-value">St. Clement Orthodox Mission</span></li>
+                <li><span class="payment-label">Account Number</span><span class="payment-value font-monospace">XXXXXXXXXX</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / CTA -->
+    <section class="section visit" id="visit-support">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <div class="ornament"><i class="bi bi-plus-lg cross"></i></div>
+          <span class="eyebrow">We Would Love to Meet You</span>
+          <h2 class="section-title">Location &amp; Connection</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="visit__img h-100" role="img" aria-label="Exterior of St. Clement Orthodox Church & Mission"></div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="visit__card h-100">
+              <div class="info-item">
+                <span class="label">Location</span>
+                Kabiria Road, next to PC Kinyanjui Technical Institute, Riruta, Nairobi
+              </div>
+              <div class="info-item">
+                <span class="label">Support Our Mission</span>
+                Your partnership directly powers our free primary school tuition, feeds local children, and scales vital missionary outreach initiatives across Nairobi.
+              </div>
+              <div class="info-item">
+                <span class="label">Contact</span>
+                <a href="mailto:info@stclementriruta.org" style="color: var(--gold);">info@stclementriruta.org</a>
+              </div>
+              <div class="info-item">
+                <span class="label">Ways to Give</span>
+                Sponsor a child · Make a donation · Mobile Money · Bank Transfer
+              </div>
+              <a href="mailto:info@stclementriruta.org" class="btn btn-gold mt-2">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-support -->
+
+
+  <!-- ============================================================ -->
+  <!-- ===== LIGHTBOX MODAL (shared) ===== -->
+  <!-- ============================================================ -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="lightbox-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <img src="" id="lightboxImage" alt="Enlarged view">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- ===== FOOTER (shared) ===== -->
+  <!-- ============================================================ -->
   <footer class="footer">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
-          <a class="navbar-brand mb-3" href="/index.html">
+          <a class="navbar-brand mb-3" href="#home">
             <span class="brand-mark"><i class="bi bi-plus-lg"></i></span>
             <span class="brand-text">
               St. Clement
@@ -295,17 +2240,17 @@
         </div>
         <div class="col-6 col-lg-2">
           <h5>Explore</h5>
-          <a href="#welcome">Our Parish</a><br />
-          <a href="biography.html">Our Archbishop's Biography</a><br />
-          <a href="gallery.html">Our Gallery</a><br/>
-          <a href="support.html">Support Us</a>
+          <a href="#home">Our Parish</a><br />
+          <a href="#biography">Our Archbishop's Biography</a><br />
+          <a href="#gallery">Our Gallery</a><br/>
+          <a href="#support">Support Us</a>
         </div>
         <div class="col-6 col-lg-2">
           <h5>The Compound</h5>
-          <a href="school.html">St Clement School</a><br/>
-          <a href="ecclesiastical.html">Patriarchal Ecclesiastical School</a><br/>
-          <a href="campus.html">Makarios Seminary</a><br />
-          <a href="#visit">Contact</a>
+          <a href="#school">St Clement School</a><br/>
+          <a href="#ecclesiastical">Patriarchal Ecclesiastical School</a><br/>
+          <a href="#campus">Makarios Seminary</a><br />
+          <a href="#visit-home">Contact</a>
         </div>
         <div class="col-lg-4">
           <h5>Service Times</h5>
@@ -325,9 +2270,200 @@
   <!-- Back to top -->
   <button class="to-top" id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
-  <!-- Bootstrap JS -->
+  <!-- ============================================================ -->
+  <!-- ===== BOOTSTRAP + ALL JAVASCRIPT ===== -->
+  <!-- ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Site JS -->
-  <script src="/js/style.js"></script>
+
+  <script>
+    (function() {
+      "use strict";
+
+      // --------------------------------------------------------------
+      // 1. NAVBAR SCROLL EFFECT + BACK TO TOP
+      // --------------------------------------------------------------
+      const nav = document.getElementById("mainNav");
+      const toTop = document.getElementById("toTop");
+      const heroBgs = document.querySelectorAll("[id^='heroBg']");
+
+      function onScroll() {
+        const y = window.scrollY;
+        if (y > 60) {
+          nav.classList.add("scrolled");
+          nav.classList.remove("at-top");
+        } else {
+          nav.classList.add("at-top");
+          nav.classList.remove("scrolled");
+        }
+        toTop.classList.toggle("show", y > 500);
+
+        // Parallax for visible hero background (only the active page's heroBg is visible)
+        heroBgs.forEach(bg => {
+          const parentHero = bg.closest('.hero');
+          if (parentHero && parentHero.closest('.page.active')) {
+            bg.style.transform = `scale(1.08) translateY(${y * 0.18}px)`;
+          }
+        });
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      toTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // --------------------------------------------------------------
+      // 2. SPA ROUTER
+      // --------------------------------------------------------------
+      const pageMap = {
+        '': 'home',
+        'home': 'home',
+        'biography': 'biography',
+        'campus': 'campus',
+        'school': 'school',
+        'ecclesiastical': 'ecclesiastical',
+        'gallery': 'gallery',
+        'support': 'support'
+      };
+
+      const pages = document.querySelectorAll('.page');
+      const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+      function showPage(pageId) {
+        // Hide all pages
+        pages.forEach(p => p.classList.remove('active'));
+        // Show target
+        const target = document.getElementById('page-' + pageId);
+        if (target) target.classList.add('active');
+        // Update nav active class
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + pageId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function handleHash() {
+        let hash = window.location.hash.replace('#', '');
+        if (!hash || !pageMap[hash]) hash = 'home';
+        showPage(pageMap[hash]);
+      }
+
+      window.addEventListener('hashchange', handleHash);
+      // Also handle initial load
+      if (window.location.hash) {
+        handleHash();
+      } else {
+        // default to home
+        window.location.hash = '#home';
+      }
+
+      // --------------------------------------------------------------
+      // 3. INTERCEPT IN-PAGE ANCHOR CLICKS
+      // --------------------------------------------------------------
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.charAt(0) !== '#') return;
+
+        // If it's a page route (e.g., #biography), let the router handle it via hashchange
+        const pageKey = href.substring(1);
+        if (pageMap[pageKey]) {
+          // Already handled by hashchange
+          return;
+        }
+
+        // Otherwise it's an in-page anchor (e.g., #welcome-home, #visit-biography)
+        e.preventDefault();
+        const targetId = href.substring(1);
+        // Find the active page container
+        const activePage = document.querySelector('.page.active');
+        if (!activePage) return;
+        const targetEl = activePage.querySelector('#' + targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      // --------------------------------------------------------------
+      // 4. "PLAN A VISIT" BUTTON – scroll to visit section of current page
+      // --------------------------------------------------------------
+      const visitBtn = document.getElementById('planVisitBtn');
+      if (visitBtn) {
+        visitBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const activePage = document.querySelector('.page.active');
+          if (!activePage) return;
+          const visitEl = activePage.querySelector('[id^="visit-"]');
+          if (visitEl) {
+            visitEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+
+      // --------------------------------------------------------------
+      // 5. LIGHTBOX LOGIC (from gallery)
+      // --------------------------------------------------------------
+      const lightboxModal = document.getElementById('lightboxModal');
+      if (lightboxModal) {
+        lightboxModal.addEventListener('show.bs.modal', function(event) {
+          const trigger = event.relatedTarget;
+          const src = trigger.getAttribute('data-img-src');
+          const img = document.getElementById('lightboxImage');
+          if (img && src) {
+            img.src = src;
+          }
+        });
+      }
+
+      // --------------------------------------------------------------
+      // 6. SCROLL REVEAL (IntersectionObserver)
+      // --------------------------------------------------------------
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach((el, i) => {
+          el.style.transitionDelay = (i % 4) * 90 + 'ms';
+          io.observe(el);
+        });
+      } else {
+        revealEls.forEach(el => el.classList.add('visible'));
+      }
+
+      // --------------------------------------------------------------
+      // 7. FOOTER YEAR
+      // --------------------------------------------------------------
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // --------------------------------------------------------------
+      // 8. COLLAPSE MOBILE MENU ON NAV LINK CLICK
+      // --------------------------------------------------------------
+      const collapseEl = document.getElementById('navMenu');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (collapseEl.classList.contains('show')) {
+            const bs = bootstrap.Collapse.getInstance(collapseEl);
+            if (bs) bs.hide();
+          }
+        });
+      });
+
+      // Run once on load
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
