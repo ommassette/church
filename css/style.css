@@ -1,0 +1,548 @@
+/* ============================================================
+   Holy Resurrection Orthodox Church — Landing Styles
+   Primary: Dark Mahogany · Accent: Liturgical Gold
+   ============================================================ */
+
+:root {
+  --mahogany: #5e1f17;
+  --mahogany-deep: #3a120d;
+  --mahogany-darkest: #210a07;
+  --gold: #c9a14a;
+  --gold-soft: #e0c280;
+  --cream: #f6efe1;
+  --cream-dim: #e7dcc6;
+  --ink: #1b0f0c;
+  --shadow: rgba(33, 10, 7, 0.45);
+
+  --font-display: "Marcellus", serif;
+  --font-body: "EB Garamond", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--cream);
+  font-size: 1.075rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .display-font {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* ---------- Decorative helpers ---------- */
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.38em;
+  font-size: 0.8rem;
+  color: var(--gold);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.gold-text { color: var(--gold); }
+.mahogany-bg { background-color: var(--mahogany); }
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  color: var(--gold);
+  margin: 0 auto 1.5rem;
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  height: 1px;
+  width: 64px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.ornament::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.ornament .cross {
+  font-size: 1.1rem;
+  transform: translateY(-1px);
+}
+
+.section {
+  padding: 6.5rem 0;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Top announcement bar ---------- */
+.topbar {
+  background: var(--mahogany-darkest);
+  color: var(--cream-dim);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0;
+}
+.topbar a { color: var(--gold-soft); }
+.topbar a:hover { color: var(--cream); }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+.navbar.at-top {
+  background-color: transparent;
+}
+.navbar.scrolled {
+  background-color: var(--mahogany-deep);
+  box-shadow: 0 10px 30px var(--shadow);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.navbar-brand {
+  font-family: var(--font-display);
+  color: var(--cream) !important;
+  line-height: 1.05;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.1rem;
+  flex: 0 0 auto;
+}
+.brand-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.navbar .nav-link {
+  color: var(--cream-dim) !important;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  font-size: 0.98rem;
+  margin: 0 0.35rem;
+  position: relative;
+}
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after { width: 100%; }
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--cream) !important; }
+.navbar-toggler {
+  border-color: rgba(201, 161, 74, 0.5);
+}
+.navbar-toggler:focus { box-shadow: none; }
+
+/* ---------- Buttons ---------- */
+.btn-gold {
+  background: var(--gold);
+  color: var(--mahogany-darkest);
+  border: 1px solid var(--gold);
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.8rem 1.9rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  color: var(--mahogany-darkest);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(201, 161, 74, 0.28);
+}
+.btn-outline-cream {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(246, 239, 225, 0.55);
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.8rem 1.9rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.btn-outline-cream:hover {
+  background: var(--cream);
+  color: var(--mahogany-deep);
+  transform: translateY(-2px);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--cream);
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/hero-interior.png");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  will-change: transform;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(33,10,7,0.78) 0%, rgba(33,10,7,0.42) 45%, rgba(33,10,7,0.85) 100%),
+    radial-gradient(circle at 50% 30%, rgba(94,31,23,0.15), rgba(33,10,7,0.6));
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 0 6rem;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  line-height: 1.04;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+  margin-bottom: 1.5rem;
+}
+.hero .lead {
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  max-width: 620px;
+  color: var(--cream-dim);
+  margin-bottom: 2.4rem;
+}
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: var(--gold-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero__scroll .mouse {
+  display: block;
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid var(--gold-soft);
+  border-radius: 12px;
+  margin: 0.6rem auto 0;
+  position: relative;
+}
+.hero__scroll .mouse::after {
+  content: "";
+  position: absolute;
+  top: 7px; left: 50%;
+  width: 3px; height: 7px;
+  background: var(--gold-soft);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  animation: scrollDot 1.6s infinite;
+}
+@keyframes scrollDot {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+/* ---------- Welcome ---------- */
+.welcome { background: var(--cream); }
+.welcome__img-wrap {
+  position: relative;
+  padding: 1rem;
+}
+.welcome__img-wrap img {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 30px 60px rgba(33,10,7,0.3);
+}
+.welcome__img-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gold);
+  transform: translate(18px, 18px);
+  z-index: -1;
+}
+.lead-paragraph {
+  font-size: 1.3rem;
+  color: var(--mahogany);
+  font-style: italic;
+}
+
+/* ---------- Service times ---------- */
+.services {
+  background: var(--mahogany-deep);
+  color: var(--cream);
+  position: relative;
+}
+.service-card {
+  background: rgba(246, 239, 225, 0.04);
+  border: 1px solid rgba(201, 161, 74, 0.25);
+  padding: 2.5rem 1.75rem;
+  height: 100%;
+  border-radius: 3px;
+  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  background: rgba(201, 161, 74, 0.08);
+  border-color: var(--gold);
+}
+.service-card .day {
+  font-family: var(--font-display);
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.service-card h3 {
+  font-size: 1.6rem;
+  margin: 0.5rem 0 0.25rem;
+}
+.service-card .time {
+  font-size: 1.05rem;
+  color: var(--cream-dim);
+}
+
+/* ---------- Quote / parallax ---------- */
+.quote-band {
+  position: relative;
+  color: var(--cream);
+  text-align: center;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+.quote-band__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/candles.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.quote-band__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(33,10,7,0.82), rgba(58,18,13,0.82));
+}
+.quote-band .container { position: relative; z-index: 2; }
+.quote-band blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  line-height: 1.4;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+}
+.quote-band cite {
+  font-style: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--gold-soft);
+}
+
+/* ---------- Ministries ---------- */
+.ministries { background: var(--cream); }
+.ministry-card {
+  background: #fff;
+  border: 1px solid var(--cream-dim);
+  border-radius: 4px;
+  padding: 2.5rem 1.75rem;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.ministry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(33,10,7,0.15);
+  border-color: var(--gold);
+}
+.ministry-card .icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mahogany);
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+.ministry-card h3 {
+  font-size: 1.4rem;
+  color: var(--mahogany);
+  margin-bottom: 0.6rem;
+}
+.ministry-card p { color: #5b4a44; margin-bottom: 0; }
+
+/* ---------- Events ---------- */
+.events { background: var(--mahogany-darkest); color: var(--cream); }
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+  transition: padding-left 0.3s ease;
+}
+.event-row:hover { padding-left: 0.75rem; }
+.event-date {
+  flex: 0 0 84px;
+  text-align: center;
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  padding: 0.6rem 0.3rem;
+  color: var(--gold);
+}
+.event-date .d { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; }
+.event-date .m { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.event-info h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+.event-info .meta { color: var(--cream-dim); font-size: 0.92rem; }
+
+/* ---------- Visit / CTA ---------- */
+.visit { background: var(--cream); }
+.visit__card {
+  background: var(--mahogany);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 3.5rem;
+  box-shadow: 0 30px 60px rgba(33,10,7,0.25);
+}
+.visit__card .info-item { margin-bottom: 1.5rem; }
+.visit__card .info-item .label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.visit__img {
+  background-image: url("/images/church-exterior.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  min-height: 420px;
+  box-shadow: 0 30px 60px rgba(33,10,7,0.25);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--mahogany-darkest);
+  color: var(--cream-dim);
+  padding: 4.5rem 0 2rem;
+}
+.footer h5 {
+  color: var(--cream);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+.footer a { color: var(--cream-dim); display: inline-block; padding: 0.25rem 0; }
+.footer a:hover { color: var(--gold); }
+.footer .social a {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(201,161,74,0.4);
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  color: var(--gold-soft);
+}
+.footer .social a:hover { background: var(--gold); color: var(--mahogany-darkest); }
+.footer-bottom {
+  border-top: 1px solid rgba(201,161,74,0.2);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(231, 220, 198, 0.6);
+}
+
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed;
+  right: 1.5rem; bottom: 1.5rem;
+  width: 48px; height: 48px;
+  background: var(--mahogany);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.35s ease;
+  z-index: 1030;
+  cursor: pointer;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover { background: var(--gold); color: var(--mahogany-darkest); }
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: var(--mahogany-deep);
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border: 1px solid rgba(201,161,74,0.25);
+  }
+  .quote-band__bg { background-attachment: scroll; }
+  .visit__card { padding: 2.25rem; }
+}
+
+@media (max-width: 575.98px) {
+  .section { padding: 4.5rem 0; }
+  .event-row { gap: 1rem; }
+}
